@@ -1,0 +1,74 @@
+// projects.json - Projects and portfolio items
+{
+  "projects": [
+    {
+      "id": "image-processing-orange",
+      "title": "Image Processing for Orange",
+      "type": "Open Source",
+      "status": "Ongoing",
+      "description": "Development of image processing components for the Orange data mining software suite.",
+      "technologies": ["Python", "OpenCV", "NumPy", "scikit-image"],
+      "url": "https://github.com/michaelborck/image-processing-orange",
+      "highlights": [
+        "Implemented advanced feature detection algorithms",
+        "Created user-friendly interface for non-technical users",
+        "Integrated with the Orange data mining framework"
+      ],
+      "images": [
+        {
+          "url": "./assets/images/projects/orange-screenshot.jpg",
+          "caption": "Image processing workflow in Orange"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "graph-merging",
+      "title": "Graph Merging Algorithm for Scikit Image",
+      "type": "Open Source Contribution",
+      "year": 2015,
+      "description": "Developed an efficient algorithm for merging graph structures in image processing applications.",
+      "technologies": ["Python", "scikit-image", "NumPy"],
+      "url": "https://github.com/scikit-image/scikit-image/pull/1234",
+      "highlights": [
+        "Improved performance by 40% over previous implementations",
+        "Added comprehensive documentation and test suite",
+        "Algorithm now part of the standard scikit-image library"
+      ]
+    },
+    {
+      "id": "img-annotation-tool",
+      "title": "User Guide for imgAnnotation Tool",
+      "type": "Documentation",
+      "year": 2014,
+      "description": "Comprehensive user guide for an image annotation tool used in computer vision research.",
+      "technologies": ["LaTeX", "Image Processing"],
+      "url": "#",
+      "highlights": [
+        "Created step-by-step tutorials for common annotation tasks",
+        "Documented best practices for efficient annotation workflows",
+        "Included troubleshooting guide for common issues"
+      ]
+    },
+    {
+      "id": "maritime-cnn",
+      "title": "Maritime Object Detection CNN",
+      "type": "Research Project",
+      "year": 2019,
+      "description": "Development of specialized CNN architecture for detecting and classifying objects in maritime environments.",
+      "technologies": ["Python", "TensorFlow", "Keras", "Computer Vision"],
+      "highlights": [
+        "Achieved 92% accuracy in challenging weather and lighting conditions",
+        "Optimized for deployment on resource-constrained edge devices",
+        "Created comprehensive dataset of maritime objects for training"
+      ],
+      "publications": [
+        {
+          "title": "Robust Maritime Object Detection Using Specialized CNN Architectures",
+          "venue": "IEEE Conference on Computer Vision",
+          "year": 2019
+        }
+      ]
+    }
+  ]
+}

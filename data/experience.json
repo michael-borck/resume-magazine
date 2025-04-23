@@ -1,0 +1,89 @@
+// experience.json - Work experience data
+{
+  "experience": [
+    {
+      "id": "curtin-lecturer",
+      "title": "Lecturer",
+      "company": "Curtin University",
+      "location": "Perth, WA",
+      "startDate": "2016-02-01",
+      "endDate": null,
+      "current": true,
+      "description": "Course Lead for IS undergraduate and postgraduate degree programs. Coordinates units at all levels both domestically and internationally.",
+      "achievements": [
+        "Developed innovative curriculum for advanced computer science courses",
+        "Led international teaching collaborations across multiple campuses",
+        "Designed and implemented new assessment strategies to improve student engagement"
+      ],
+      "skills": ["Teaching", "Curriculum Development", "Academic Leadership"],
+      "media": [
+        {
+          "type": "image",
+          "url": "./assets/images/experience/curtin-teaching.jpg",
+          "caption": "Leading a workshop on machine learning applications"
+        },
+        {
+          "type": "document",
+          "url": "./assets/documents/course-outline-example.pdf",
+          "title": "Sample Course Outline"
+        }
+      ],
+      "testimonials": [
+        {
+          "quote": "Dr. Borck's teaching methods have transformed how we approach complex computer science concepts.",
+          "author": "Former Student",
+          "position": "Software Engineer"
+        }
+      ]
+    },
+    {
+      "id": "consultant",
+      "title": "IS Consultant",
+      "company": "Independent",
+      "location": "Perth, WA",
+      "startDate": "2016-01-01",
+      "endDate": null,
+      "current": true,
+      "description": "IS/IT consultation and analysis. Provision of Managed IT Services.",
+      "achievements": [
+        "Advised multiple organizations on digital transformation strategies",
+        "Implemented custom IT solutions for specific business challenges",
+        "Provided expert guidance on technology adoption and integration"
+      ]
+    },
+    {
+      "id": "researcher",
+      "title": "Researcher",
+      "company": "Curtin University",
+      "location": "Perth, WA",
+      "startDate": "2018-03-01",
+      "endDate": "2019-12-31",
+      "current": false,
+      "description": "Led investigation and development of CNN models for application in maritime environments, advancing computer vision capabilities in challenging settings.",
+      "achievements": [
+        "Developed novel CNN architectures specifically optimized for maritime object detection",
+        "Published research findings in peer-reviewed journals",
+        "Collaborated with industry partners to implement solutions in real-world environments"
+      ],
+      "publications": [
+        {
+          "title": "Advanced CNN Models for Maritime Object Detection",
+          "journal": "Journal of Computer Vision Applications",
+          "year": 2019,
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "id": "it-manager",
+      "title": "IT Manager",
+      "company": "Submarine Systems Centre, RAN",
+      "location": "Perth, WA",
+      "startDate": "1996-07-01",
+      "endDate": "2000-01-31",
+      "current": false,
+      "description": "Managed information technology for the Submarine Systems Centre (RAN). Provided strategic IT advice to senior managers and boards."
+    }
+  ]
+}
+

@@ -1,0 +1,233 @@
+<!-- project.html - Projects and portfolio template -->
+<div class="magazine-article project-article">
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="magazine-info">
+      <div class="magazine-title">{{config.magazine.title}}</div>
+      <div class="issue-info">{{config.magazine.issue}}</div>
+    </div>
+    
+    <div class="article-title-area">
+      <h1 class="article-title">PROJECTS & PORTFOLIO</h1>
+      <div class="article-subtitle">Research & Development Showcase</div>
+    </div>
+    
+    <div class="author-info">
+      <div class="author-name">{{profile.name}}</div>
+      <div class="author-title">{{profile.title}}</div>
+    </div>
+  </div>
+  
+  <!-- Project Filter Navigation -->
+  <div class="project-filters">
+    <div class="filter-label">Filter by:</div>
+    <div class="filter-buttons">
+      <button class="project-filter-btn active" data-filter="all">All Projects</button>
+      <button class="project-filter-btn" data-filter="open-source">Open Source</button>
+      <button class="project-filter-btn" data-filter="research">Research</button>
+      <button class="project-filter-btn" data-filter="documentation">Documentation</button>
+    </div>
+    
+    <div class="search-container">
+      <input type="text" class="project-search" placeholder="Search projects...">
+      <i class="icon icon-search"></i>
+    </div>
+  </div>
+  
+  <!-- Article Content -->
+  <div class="article-content">
+    <!-- If a specific project is selected, show its detail -->
+    {{#if params.id}}
+      {{#each projects.projects}}
+        {{#if this.id === params.id}}
+        <div class="project-detail">
+          <div class="project-header">
+            <h2 class="project-title">{{this.title}}</h2>
+            <div class="project-meta">
+              <span class="project-type">{{this.type}}</span>
+              <span class="project-year">{{this.year}}{{#if this.status}} | {{this.status}}{{/if}}</span>
+            </div>
+          </div>
+          
+          <div class="project-description">
+            <p>{{this.description}}</p>
+          </div>
+          
+          {{#if this.technologies}}
+          <div class="technologies-section">
+            <h3>Technologies Used</h3>
+            <div class="technologies-used">
+              {{#each this.technologies}}
+              <span class="tech-tag">{{this}}</span>
+              {{/each}}
+            </div>
+          </div>
+          {{/if}}
+          
+          {{#if this.highlights}}
+          <div class="highlights-section">
+            <h3>Key Achievements</h3>
+            <ul class="highlights-list">
+              {{#each this.highlights}}
+              <li class="highlight-item">{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}}
+          
+          {{#if this.images}}
+          <div class="project-gallery">
+            <h3>Project Gallery</h3>
+            <div class="gallery-items">
+              {{#each this.images}}
+              <div class="gallery-item">
+                <img src="{{this.url}}" alt="{{this.caption}}" />
+                <div class="caption">{{this.caption}}</div>
+              </div>
+              {{/each}}
+            </div>
+          </div>
+          {{/if}}
+          
+          {{#if this.publications}}
+          <div class="publications-section">
+            <h3>Related Publications</h3>
+            <ul class="publications-list">
+              {{#each this.publications}}
+              <li class="publication-item">
+                <div class="publication-title">{{this.title}}</div>
+                <div class="publication-details">{{this.venue}}{{#if this.year}}, {{this.year}}{{/if}}</div>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}}
+          
+          {{#if this.url}}
+          <div class="project-links">
+            <a href="{{this.url}}" target="_blank" class="project-link-btn">
+              <i class="icon icon-external-link"></i> Visit Project
+            </a>
+          </div>
+          {{/if}}
+        </div>
+        {{/if}}
+      {{/each}}
+    
+    <!-- Otherwise, show the projects overview grid -->
+    {{else}}
+      <div class="projects-overview">
+        <div class="intro-text">
+          <p>My portfolio encompasses a range of projects from open source contributions to specialized research initiatives. Each project demonstrates my technical capabilities and problem-solving approach across various domains.</p>
+        </div>
+        
+        <!-- Featured Project Spotlight -->
+        {{#each projects.projects}}
+          {{#if this.featured}}
+          <div class="featured-project">
+            <div class="featured-label">Featured Project</div>
+            <div class="featured-content">
+              <div class="featured-info">
+                <h2 class="featured-title">{{this.title}}</h2>
+                <div class="featured-meta">
+                  <span class="featured-type">{{this.type}}</span>
+                  {{#if this.year}}<span class="featured-year">{{this.year}}</span>{{/if}}
+                </div>
+                <div class="featured-description">{{this.description}}</div>
+                <div class="featured-tech">
+                  {{#each this.technologies}}
+                  <span class="tech-tag">{{this}}</span>
+                  {{/each}}
+                </div>
+                <div class="featured-actions">
+                  <button class="read-more-btn" data-nav-link data-page="projects" data-params='{"id":"{{this.id}}"}'>View Details</button>
+                  {{#if this.url}}
+                  <a href="{{this.url}}" target="_blank" class="external-link-btn">
+                    <i class="icon icon-external-link"></i> Visit
+                  </a>
+                  {{/if}}
+                </div>
+              </div>
+              {{#if this.images}}
+              <div class="featured-image">
+                <img src="{{this.images.0.url}}" alt="{{this.title}}" />
+              </div>
+              {{/if}}
+            </div>
+          </div>
+          {{/if}}
+        {{/each}}
+        
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          {{#each projects.projects}}
+          <div class="project-card" data-project-id="{{this.id}}" data-project-type="{{this.type}}">
+            <div class="project-card-content">
+              <h3 class="project-card-title">{{this.title}}</h3>
+              <div class="project-card-meta">
+                <span class="project-card-type">{{this.type}}</span>
+                {{#if this.year}}<span class="project-card-year">{{this.year}}</span>{{/if}}
+              </div>
+              <div class="project-card-description">{{this.description}}</div>
+              <div class="project-card-tech">
+                {{#each this.technologies}}
+                {{#if @index < 3}}
+                <span class="tech-tag-small">{{this}}</span>
+                {{/if}}
+                {{/each}}
+                {{#if this.technologies.length > 3}}
+                <span class="tech-more">+{{this.technologies.length - 3}} more</span>
+                {{/if}}
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="read-more-btn" data-nav-link data-page="projects" data-params='{"id":"{{this.id}}"}'>Details</button>
+              {{#if this.url}}
+              <a href="{{this.url}}" target="_blank" class="external-link-small">
+                <i class="icon icon-external-link"></i>
+              </a>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
+  </div>
+  
+  <!-- Project Timeline -->
+  <div class="project-timeline">
+    <h2 class="section-title">Project Timeline</h2>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      {{#each projects.projects}}
+      <div class="timeline-point" data-year="{{this.year}}" data-nav-link data-page="projects" data-params='{"id":"{{this.id}}"}'>
+        <div class="timeline-dot"></div>
+        <div class="timeline-point-label">{{this.year}}</div>
+        <div class="timeline-popover">
+          <div class="popover-title">{{this.title}}</div>
+          <div class="popover-type">{{this.type}}</div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  
+  <!-- Page Navigation -->
+  <div class="page-navigation">
+    <div class="prev-page" data-nav-link data-page="education">
+      <i class="icon icon-arrow-left"></i>
+      <span>Education</span>
+    </div>
+    
+    <div class="page-indicator">
+      <span>Projects & Portfolio</span>
+      <span class="page-number">Page 4</span>
+    </div>
+    
+    <div class="next-page" data-nav-link data-page="contact">
+      <span>Contact</span>
+      <i class="icon icon-arrow-right"></i>
+    </div>
+  </div>
+</div>

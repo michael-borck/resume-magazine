@@ -1,0 +1,127 @@
+<!-- cover.html - Magazine cover template -->
+<div class="magazine-cover">
+  <!-- Top Section with Magazine Title, Topics and Issue Info -->
+  <div class="top-section">
+    <div class="left-column">
+      <!-- Cover Topics (Research Interests) -->
+      <div class="cover-topics">
+        {{#each profile.coverTopics}}
+        <div class="topic animate-on-view">{{this}}</div>
+        {{/each}}
+      </div>
+    </div>
+    
+    <div class="center-column">
+      <!-- Magazine Title -->
+      <div class="magazine-title animate-on-view">{{config.magazine.title}}</div>
+    </div>
+    
+    <div class="right-column">
+      <!-- Issue Info -->
+      <div class="issue-info">
+        <div>{{config.magazine.issue}}</div>
+        <div>{{config.magazine.tagline}}</div>
+        <div>{{config.magazine.subtitle}}</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main Headline (Name) -->
+  <div class="main-headline animate-on-view">{{profile.name}}</div>
+  
+  <!-- Tagline (Title) -->
+  <div class="tagline animate-on-view">{{profile.title}} | {{profile.tagline}}</div>
+  
+  <!-- Main Content Area -->
+  <div class="content-section">
+    <!-- Left Side - Experience -->
+    <div class="main-content">
+      <!-- Highlights (Experience) -->
+      <div class="highlights">
+        {{#each experience.experience}}
+          {{#if this.current}}
+          <div class="highlight animate-on-view" data-experience-id="{{this.id}}">
+            <div class="highlight-title">{{this.company}}</div>
+            <div class="highlight-subtitle">{{this.title}} | {{this.startDate}} - {{#if this.endDate}}{{this.endDate}}{{else}}Present{{/if}}</div>
+            <div class="highlight-description">{{this.description}}</div>
+            <div class="read-more-link" data-nav-link data-page="experience" data-params='{"id":"{{this.id}}"}'>Read Full Article</div>
+          </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+    
+    <!-- Right Side - Education, Skills -->
+    <div class="side-content">
+      <!-- Profile Photo -->
+      <div class="profile-photo animate-on-view">
+        <img src="{{profile.photo}}" alt="{{profile.name}}" />
+      </div>
+      
+      <!-- Education Section -->
+      <div class="education animate-on-view">
+        <div class="education-title">ACADEMIC CREDENTIALS</div>
+        {{#each education.education}}
+          {{#if this.featured}}
+          <div class="education-item">
+            <div class="education-degree">{{this.degree}}{{#if this.field}} in {{this.field}}{{/if}}</div>
+            <div class="education-school">{{this.institution}}, {{this.year}}</div>
+          </div>
+          {{/if}}
+        {{/each}}
+        <div class="read-more-link" data-nav-link data-page="education">View Full Academic Profile</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Skills Preview -->
+  <div class="skills-preview">
+    <div class="skills-title">PROGRAMMING EXPERTISE</div>
+    <div class="skills-grid">
+      {{#each programmingLanguages}}
+        {{#if this.featured}}
+        <div class="skill-tag animate-on-view">{{this.name}}</div>
+        {{/if}}
+      {{/each}}
+    </div>
+    <div class="read-more-link" data-nav-link data-page="skills">Explore All Skills</div>
+  </div>
+  
+  <!-- Featured Projects Teaser -->
+  <div class="featured-projects">
+    <div class="section-title">FEATURED PROJECTS</div>
+    <div class="project-teasers">
+      {{#each projects.projects}}
+        {{#if this.featured}}
+        <div class="project-teaser animate-on-view" data-nav-link data-page="projects" data-params='{"id":"{{this.id}}"}'>
+          <div class="project-teaser-title">{{this.title}}</div>
+          <div class="project-teaser-type">{{this.type}}</div>
+        </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+  
+  <!-- Contact Bar -->
+  <div class="contact-bar">
+    <div class="contact-item">{{profile.contact.email}}</div>
+    <div class="contact-item">{{profile.contact.phone}}</div>
+    <div class="contact-item contact-right">{{profile.contact.certification}}</div>
+    <div class="contact-item contact-right">{{profile.contact.location}}</div>
+  </div>
+  
+  <!-- Magazine Navigation -->
+  <div class="magazine-nav">
+    <div class="nav-instruction">Turn Page to Continue</div>
+    <div class="nav-buttons">
+      {{#each config.navigation}}
+        {{#if this.page}}
+        <div class="nav-button" data-nav-link data-page="{{this.page}}">
+          <i class="icon icon-{{this.icon}}"></i>
+          <span>{{this.label}}</span>
+        </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>

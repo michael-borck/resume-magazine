@@ -1,0 +1,200 @@
+<!-- skills.html - Skills and expertise template -->
+<div class="magazine-article skills-article">
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="magazine-info">
+      <div class="magazine-title">{{config.magazine.title}}</div>
+      <div class="issue-info">{{config.magazine.issue}}</div>
+    </div>
+    
+    <div class="article-title-area">
+      <h1 class="article-title">SKILLS & EXPERTISE</h1>
+      <div class="article-subtitle">Technical Capabilities & Research Focus</div>
+    </div>
+    
+    <div class="author-info">
+      <div class="author-name">{{profile.name}}</div>
+      <div class="author-title">{{profile.title}}</div>
+    </div>
+  </div>
+  
+  <!-- Skill Categories Navigation -->
+  <div class="skill-categories">
+    <div class="category-buttons">
+      <button class="skill-category-btn active" data-category="all">All Skills</button>
+      <button class="skill-category-btn" data-category="programming">Programming</button>
+      <button class="skill-category-btn" data-category="research">Research</button>
+      <button class="skill-category-btn" data-category="teaching">Teaching</button>
+      <button class="skill-category-btn" data-category="management">Management</button>
+    </div>
+  </div>
+  
+  <!-- Article Content -->
+  <div class="article-content">
+    <!-- Intro to Skills -->
+    <div class="intro-text">
+      <p>With over two decades of experience in computer science and IT, I've developed a diverse skill set spanning programming, research, teaching, and technical leadership. This page highlights my technical expertise and specialized knowledge areas.</p>
+    </div>
+    
+    <!-- Programming Languages Section -->
+    <div class="skills-section" data-skill-category="programming">
+      <h2 class="section-title">Programming Languages</h2>
+      
+      <div class="skill-graph-container">
+        <!-- Programming Languages Chart -->
+        <div class="skill-chart">
+          <div class="chart-container">
+            <!-- Chart will be rendered by JavaScript -->
+            <div class="skill-chart-placeholder" id="programming-languages-chart"></div>
+          </div>
+        </div>
+        
+        <!-- Programming Languages List -->
+        <div class="skills-detail-list">
+          {{#each programmingLanguages}}
+          <div class="skill-item">
+            <div class="skill-header">
+              <div class="skill-name">{{this.name}}</div>
+              <div class="skill-level">{{this.level}}</div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: {{this.level}}%;"></div>
+            </div>
+            <div class="skill-detail">
+              <span class="experience-years">{{this.yearsExperience}} years</span>
+              {{#if this.projects}}
+              <span class="skill-projects">
+                Projects: 
+                {{#each this.projects}}
+                <a href="#" data-nav-link data-page="projects" data-params='{"id":"{{this}}"}'>{{this}}</a>
+                {{/each}}
+              </span>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Research Areas Section -->
+    <div class="skills-section" data-skill-category="research">
+      <h2 class="section-title">Research Expertise</h2>
+      
+      <div class="research-areas">
+        {{#each researchAreas}}
+        <div class="research-area-card">
+          <div class="research-area-title">{{this.name}}</div>
+          <div class="research-area-description">{{this.description}}</div>
+          <div class="research-stats">
+            <div class="stat-item">
+              <div class="stat-value">{{this.publications}}</div>
+              <div class="stat-label">Publications</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">{{this.projects}}</div>
+              <div class="stat-label">Projects</div>
+            </div>
+          </div>
+          <div class="research-area-footer">
+            <button class="related-work-btn" data-research-area="{{this.name}}">Related Work</button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    
+    <!-- Teaching Skills Section -->
+    <div class="skills-section" data-skill-category="teaching">
+      <h2 class="section-title">Teaching & Education</h2>
+      
+      <div class="teaching-skills">
+        <div class="teaching-areas">
+          <h3>Course Areas</h3>
+          <div class="tag-cloud">
+            <span class="tag">Software Engineering</span>
+            <span class="tag">Computer Science</span>
+            <span class="tag">Data Structures</span>
+            <span class="tag">Algorithms</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Database Systems</span>
+            <span class="tag">Web Development</span>
+          </div>
+        </div>
+        
+        <div class="teaching-methods">
+          <h3>Teaching Methods</h3>
+          <ul class="methods-list">
+            <li>Problem-based learning with real-world applications</li>
+            <li>Interactive coding demonstrations and workshops</li>
+            <li>Industry-focused curriculum development</li>
+            <li>Integration of cutting-edge research into teaching</li>
+            <li>Mentorship of undergraduate and postgraduate students</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Management & Leadership Section -->
+    <div class="skills-section" data-skill-category="management">
+      <h2 class="section-title">Leadership & Management</h2>
+      
+      <div class="management-skills">
+        <div class="leadership-columns">
+          <div class="column">
+            <h3>Project Management</h3>
+            <ul class="leadership-list">
+              <li>Agile and Scrum methodologies</li>
+              <li>Team coordination and leadership</li>
+              <li>Stakeholder management</li>
+              <li>Resource allocation and planning</li>
+              <li>Risk assessment and mitigation</li>
+            </ul>
+          </div>
+          
+          <div class="column">
+            <h3>Strategic Leadership</h3>
+            <ul class="leadership-list">
+              <li>Department representation on committees</li>
+              <li>Curriculum development and review</li>
+              <li>Research group leadership</li>
+              <li>Industry partnership cultivation</li>
+              <li>Cross-functional team leadership</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Skills Visualization -->
+  <div class="skills-visualization">
+    <h2 class="section-title">Skills Interconnection</h2>
+    <div class="skill-graph" id="skills-network-graph">
+      <!-- Interactive skill network graph will be rendered by JavaScript -->
+      <div class="graph-placeholder">Interactive Skill Network Graph</div>
+    </div>
+    <div class="graph-description">
+      <p>This network visualizes how my skills interconnect across different domains, showing the relationships between programming languages, research areas, and application domains.</p>
+    </div>
+  </div>
+  
+  <!-- Page Navigation -->
+  <div class="page-navigation">
+    <div class="prev-page" data-nav-link data-page="experience">
+      <i class="icon icon-arrow-left"></i>
+      <span>Experience</span>
+    </div>
+    
+    <div class="page-indicator">
+      <span>Skills & Expertise</span>
+      <span class="page-number">Page 3</span>
+    </div>
+    
+    <div class="next-page" data-nav-link data-page="education">
+      <span>Education</span>
+      <i class="icon icon-arrow-right"></i>
+    </div>
+  </div>
+</div>

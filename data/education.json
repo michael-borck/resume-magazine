@@ -1,0 +1,67 @@
+// education.json - Education background
+{
+  "education": [
+    {
+      "degree": "Doctor of Philosophy",
+      "field": "Computer Science",
+      "institution": "Curtin University",
+      "location": "Perth, WA",
+      "year": 2017,
+      "thesis": {
+        "title": "Advanced Predictive Models for Computer Vision Applications",
+        "abstract": "This research explored novel applications of predictive analytics in computer vision systems, focusing on real-time object recognition in challenging environments.",
+        "url": "#"
+      },
+      "achievements": [
+        "Published 4 peer-reviewed papers during candidature",
+        "Received university research excellence award"
+      ]
+    },
+    {
+      "degree": "Bachelor of Science (Honours)",
+      "field": "Computer Science",
+      "institution": "Curtin University",
+      "location": "Perth, WA",
+      "year": 2001
+    },
+    {
+      "degree": "Graduate Diploma in Business",
+      "institution": "Curtin University",
+      "location": "Perth, WA",
+      "year": 2000
+    },
+    {
+      "degree": "Bachelor of Science",
+      "field": "Computer Science",
+      "institution": "Australian National University",
+      "location": "Canberra, ACT",
+      "year": 1994
+    },
+    {
+      "degree": "Bachelor of Applied Science",
+      "field": "Mathematics",
+      "institution": "Queensland University of Technology",
+      "location": "Brisbane, QLD",
+      "year": 1989
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Certified Professional",
+      "organization": "Australian Computer Society",
+      "year": 2021,
+      "validUntil": null
+    },
+    {
+      "name": "Cyber Security Training",
+      "organization": "Curtin University",
+      "year": 2021
+    },
+    {
+      "name": "Ethics Reviewer Training",
+      "organization": "Curtin University",
+      "year": 2021
+    }
+  ]
+}
+

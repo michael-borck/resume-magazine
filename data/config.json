@@ -1,0 +1,51 @@
+// config.json - Global site configuration
+{
+  "siteTitle": "Michael Borck - Interactive Resume",
+  "description": "Interactive magazine-style resume showcasing my experience in academia, research, and IT.",
+  "theme": {
+    "primaryColor": "#1a1a2e",
+    "secondaryColor": "#e94560",
+    "textColor": "#ffffff",
+    "accentColor": "#0f3460",
+    "fontPrimary": "'Helvetica', 'Arial', sans-serif",
+    "fontSecondary": "'Georgia', serif"
+  },
+  "navigation": [
+    {
+      "label": "Cover",
+      "page": "cover",
+      "icon": "home"
+    },
+    {
+      "label": "Experience",
+      "page": "experience",
+      "icon": "briefcase"
+    },
+    {
+      "label": "Skills",
+      "page": "skills",
+      "icon": "code"
+    },
+    {
+      "label": "Education",
+      "page": "education",
+      "icon": "graduation-cap"
+    },
+    {
+      "label": "Projects",
+      "page": "projects",
+      "icon": "folder"
+    },
+    {
+      "label": "Contact",
+      "page": "contact",
+      "icon": "envelope"
+    }
+  ],
+  "magazine": {
+    "title": "TECH",
+    "issue": "April 2025",
+    "tagline": "EXPERT EDUCATOR EDITION",
+    "subtitle": "LEADING ACADEMIC INNOVATION"
+  }
+}

@@ -1,0 +1,99 @@
+// skills.json - Skills and expertise
+{
+  "programmingLanguages": [
+    {
+      "name": "Python",
+      "level": "Expert",
+      "yearsExperience": 10,
+      "projects": ["image-processing-orange", "graph-merging"]
+    },
+    {
+      "name": "C/C++",
+      "level": "Expert",
+      "yearsExperience": 15
+    },
+    {
+      "name": "Java",
+      "level": "Advanced",
+      "yearsExperience": 12
+    },
+    {
+      "name": "C#",
+      "level": "Advanced",
+      "yearsExperience": 8
+    },
+    {
+      "name": "JavaScript",
+      "level": "Intermediate",
+      "yearsExperience": 6
+    },
+    {
+      "name": "Matlab",
+      "level": "Advanced",
+      "yearsExperience": 10
+    },
+    {
+      "name": "PHP",
+      "level": "Intermediate",
+      "yearsExperience": 5
+    },
+    {
+      "name": "CSS",
+      "level": "Intermediate",
+      "yearsExperience": 6
+    },
+    {
+      "name": "HTML",
+      "level": "Advanced",
+      "yearsExperience": 8
+    },
+    {
+      "name": "LaTeX",
+      "level": "Advanced",
+      "yearsExperience": 10
+    },
+    {
+      "name": "SQL",
+      "level": "Advanced",
+      "yearsExperience": 12
+    },
+    {
+      "name": "Bash",
+      "level": "Intermediate",
+      "yearsExperience": 10
+    }
+  ],
+  "researchAreas": [
+    {
+      "name": "Predictive Analytics",
+      "description": "Development of predictive models for pattern recognition and trend analysis",
+      "publications": 5,
+      "projects": 3
+    },
+    {
+      "name": "Computer Vision",
+      "description": "Application of image processing and deep learning for visual recognition tasks",
+      "publications": 7,
+      "projects": 4
+    },
+    {
+      "name": "Artificial Intelligence",
+      "description": "Design and implementation of AI systems for solving complex problems",
+      "publications": 3,
+      "projects": 2
+    },
+    {
+      "name": "Machine Learning",
+      "description": "Development of algorithms that can learn from and make predictions on data",
+      "publications": 6,
+      "projects": 4
+    },
+    {
+      "name": "Computer Security",
+      "description": "Implementation of security protocols and vulnerability analysis techniques",
+      "publications": 4,
+      "projects": 3
+    }
+  ]
+}
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michael Borck - Interactive Magazine Resume</title>
+  
+  <!-- Base Styles -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/cover.css">
+  <link rel="stylesheet" href="./assets/css/article.css">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Additional Meta Tags -->
+  <meta name="description" content="Interactive magazine-style resume for Michael Borck, showcasing experience in academia, research, and IT">
+  <meta name="author" content="Michael Borck">
+</head>
+<body>
+  <!-- Magazine Container -->
+  <div class="magazine-container">
+    <!-- Page Flip Effect Container -->
+    <div class="page-flip-container">
+      <!-- Content Container (pages will be loaded here) -->
+      <div id="magazine-content" class="magazine-content">
+        <!-- Initial loading state -->
+        <div class="loading-screen">
+          <div class="magazine-title-loading">TECH</div>
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Loading your interactive resume...</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Global Navigation -->
+    <div class="global-navigation">
+      <div class="nav-toggle">
+        <i class="fa fa-bars"></i>
+      </div>
+      
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <!-- Navigation items will be populated from config -->
+        </ul>
+      </nav>
+    </div>
+    
+    <!-- Page Turning Controls -->
+    <div class="page-controls">
+      <button class="prev-page-btn" aria-label="Previous Page">
+        <i class="fa fa-chevron-left"></i>
+      </button>
+      <div class="page-indicator">
+        <span class="current-page">1</span>/<span class="total-pages">6</span>
+      </div>
+      <button class="next-page-btn" aria-label="Next Page">
+        <i class="fa fa-chevron-right"></i>
+      </button>
+    </div>
+    
+    <!-- QR Code for Mobile Access -->
+    <div class="qr-code-container">
+      <div class="qr-toggle">
+        <i class="fa fa-qrcode"></i>
+      </div>
+      <div class="qr-popup">
+        <div class="qr-code" id="current-page-qr"></div>
+        <div class="qr-instructions">Scan to view this page on your mobile device</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript -->
+  <script type="module" src="./assets/js/main.js"></script>
+  
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
+  <!-- Script to generate QR code for current page -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create QR code instance
+      const qrCode = new QRCode(document.getElementById("current-page-qr"), {
+        width: 128,
+        height: 128,
+        colorDark: "#1a1a2e",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+      
+      // Generate QR for current URL
+      qrCode.makeCode(window.location.href);
+      
+      // Update QR code when URL changes
+      const observer = new MutationObserver(() => {
+        qrCode.makeCode(window.location.href);
+      });
+      
+      // Observe URL changes via title changes
+      observer.observe(document.querySelector('title'), { 
+        subtree: true, 
+        characterData: true,
+        childList: true 
+      });
+      
+      // Toggle QR code display
+      document.querySelector('.qr-toggle').addEventListener('click', function() {
+        document.querySelector('.qr-popup').classList.toggle('show');
+      });
+    });
+  </script>
+</body>
+</html>

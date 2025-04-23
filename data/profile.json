@@ -1,0 +1,24 @@
+// profile.json - Basic personal information
+{
+  "name": "Michael Borck",
+  "title": "Lecturer & Consultant",
+  "tagline": "Computer Science PhD",
+  "photo": "./assets/images/profile-photo.jpg",
+  "contact": {
+    "email": "michael.borck@curtin.edu.au",
+    "phone": "0402 297 573",
+    "location": "Perth, WA",
+    "certification": "ACS Certified Professional"
+  },
+  "social": {
+    "linkedin": "michaelborck",
+    "github": "michaelborck"
+  },
+  "coverTopics": [
+    "Predictive Analytics",
+    "Computer Vision",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Computer Security"
+  ]
+}

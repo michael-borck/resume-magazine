@@ -1,0 +1,173 @@
+<!-- experience.html - Experience article template -->
+<div class="magazine-article experience-article">
+  <!-- Article Header -->
+  <div class="article-header">
+    <div class="magazine-info">
+      <div class="magazine-title">{{config.magazine.title}}</div>
+      <div class="issue-info">{{config.magazine.issue}}</div>
+    </div>
+    
+    <div class="article-title-area">
+      <h1 class="article-title">PROFESSIONAL EXPERIENCE</h1>
+      <div class="article-subtitle">Career Highlights & Achievements</div>
+    </div>
+    
+    <div class="author-info">
+      <div class="author-name">{{profile.name}}</div>
+      <div class="author-title">{{profile.title}}</div>
+    </div>
+  </div>
+  
+  <!-- Timeline Navigation -->
+  <div class="timeline-navigation">
+    <div class="timeline-track">
+      {{#each experience.experience}}
+      <div class="timeline-item {{#if this.current}}current{{/if}}" 
+           data-experience-id="{{this.id}}">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">{{this.startDate}}</div>
+        <div class="timeline-title">{{this.title}}</div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  
+  <!-- Article Content -->
+  <div class="article-content">
+    <!-- If a specific experience is selected, show its detail -->
+    {{#if params.id}}
+      {{#each experience.experience}}
+        {{#if this.id === params.id}}
+        <div class="experience-detail">
+          <div class="experience-header">
+            <h2 class="experience-title">{{this.title}}</h2>
+            <div class="experience-company">{{this.company}}</div>
+            <div class="experience-period">{{this.startDate}} - {{#if this.endDate}}{{this.endDate}}{{else}}Present{{/if}}</div>
+          </div>
+          
+          <div class="experience-description">
+            <p>{{this.description}}</p>
+          </div>
+          
+          {{#if this.achievements}}
+          <div class="achievements-section">
+            <h3>Key Achievements</h3>
+            <ul class="achievements-list">
+              {{#each this.achievements}}
+              <li class="achievement-item">{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}}
+          
+          {{#if this.skills}}
+          <div class="skills-used-section">
+            <h3>Skills Applied</h3>
+            <div class="skills-used">
+              {{#each this.skills}}
+              <span class="skill-tag">{{this}}</span>
+              {{/each}}
+            </div>
+          </div>
+          {{/if}}
+          
+          {{#if this.media}}
+          <div class="media-gallery">
+            <h3>Related Media</h3>
+            <div class="gallery-items">
+              {{#each this.media}}
+              <div class="gallery-item">
+                {{#if this.type === "image"}}
+                <img src="{{this.url}}" alt="{{this.caption}}" />
+                <div class="caption">{{this.caption}}</div>
+                {{/if}}
+                
+                {{#if this.type === "document"}}
+                <div class="document-preview">
+                  <i class="icon icon-file-text"></i>
+                  <span>{{this.title}}</span>
+                </div>
+                {{/if}}
+              </div>
+              {{/each}}
+            </div>
+          </div>
+          {{/if}}
+          
+          {{#if this.testimonials}}
+          <div class="testimonials-section">
+            <h3>What People Say</h3>
+            <div class="testimonials">
+              {{#each this.testimonials}}
+              <div class="testimonial">
+                <div class="quote">"{{this.quote}}"</div>
+                <div class="author">— {{this.author}}{{#if this.position}}, {{this.position}}{{/if}}</div>
+              </div>
+              {{/each}}
+            </div>
+          </div>
+          {{/if}}
+          
+          {{#if this.publications}}
+          <div class="publications-section">
+            <h3>Related Publications</h3>
+            <ul class="publications-list">
+              {{#each this.publications}}
+              <li class="publication-item">
+                <div class="publication-title">{{this.title}}</div>
+                <div class="publication-details">{{this.journal}}{{#if this.year}}, {{this.year}}{{/if}}</div>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          {{/if}}
+        </div>
+        {{/if}}
+      {{/each}}
+    
+    <!-- Otherwise, show a general experience overview -->
+    {{else}}
+      <div class="experience-overview">
+        <div class="intro-text">
+          <p>With a career spanning academia, research, and industry IT management, I bring a diverse perspective to every challenge. Explore my professional journey through the interactive timeline above or browse the featured positions below.</p>
+        </div>
+        
+        <div class="experience-grid">
+          {{#each experience.experience}}
+          <div class="experience-card" data-experience-id="{{this.id}}">
+            <div class="experience-card-header">
+              <h3>{{this.title}}</h3>
+              <div class="company-name">{{this.company}}</div>
+              <div class="date-range">{{this.startDate}} - {{#if this.endDate}}{{this.endDate}}{{else}}Present{{/if}}</div>
+            </div>
+            <div class="experience-card-body">
+              <p>{{this.description}}</p>
+            </div>
+            <div class="experience-card-footer">
+              <button class="read-more-btn" data-nav-link data-page="experience" data-params='{"id":"{{this.id}}"}'>Read Full Story</button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
+  </div>
+  
+  <!-- Page Navigation -->
+  <div class="page-navigation">
+    <div class="prev-page" data-nav-link data-page="cover">
+      <i class="icon icon-arrow-left"></i>
+      <span>Cover</span>
+    </div>
+    
+    <div class="page-indicator">
+      <span>Experience</span>
+      <span class="page-number">Page 2</span>
+    </div>
+    
+    <div class="next-page" data-nav-link data-page="skills">
+      <span>Skills</span>
+      <i class="icon icon-arrow-right"></i>
+    </div>
+  </div>
+</div>
