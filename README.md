@@ -1,5 +1,9 @@
 # Interactive Magazine Resume
 
+<!-- BADGES:START -->
+[![css](https://img.shields.io/badge/-css-1572b6?style=flat-square)](https://github.com/topics/css) [![customizable-content](https://img.shields.io/badge/-customizable--content-blue?style=flat-square)](https://github.com/topics/customizable-content) [![html](https://img.shields.io/badge/-html-e34f26?style=flat-square)](https://github.com/topics/html) [![interactive-resume](https://img.shields.io/badge/-interactive--resume-blue?style=flat-square)](https://github.com/topics/interactive-resume) [![javascript](https://img.shields.io/badge/-javascript-f7df1e?style=flat-square)](https://github.com/topics/javascript) [![responsive-design](https://img.shields.io/badge/-responsive--design-blue?style=flat-square)](https://github.com/topics/responsive-design) [![template-based](https://img.shields.io/badge/-template--based-blue?style=flat-square)](https://github.com/topics/template-based) [![vanilla-javascript](https://img.shields.io/badge/-vanilla--javascript-blue?style=flat-square)](https://github.com/topics/vanilla-javascript) [![magazine-design](https://img.shields.io/badge/-magazine--design-blue?style=flat-square)](https://github.com/topics/magazine-design) [![resume](https://img.shields.io/badge/-resume-00bcd4?style=flat-square)](https://github.com/topics/resume)
+<!-- BADGES:END -->
+
 A vanilla JavaScript, HTML, and CSS implementation of an interactive, magazine-style resume that showcases professional experience, skills, and projects in an engaging format.
 
 ![Magazine Resume Preview](assets/images/preview.png)
